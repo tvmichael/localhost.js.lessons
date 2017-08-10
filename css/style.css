@@ -1,5 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* Background */
-main {
+body {
+    min-width: 800px;
+}
+
+/* === HEADER ================================================ */
+header {
     background-color: #3689ff;
+}
+.center-header {
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+}
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+}
+header h5 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* === MAIN ================================================== */
+.clock{
+    padding: 50px;
+}
+
+.center{
+    position: relative;
+    margin: auto;
+    width: 600px;
+    height: 200px;
+    background-color: #bcd6c9;
+}
+.clock-style{
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    background-color: #f1f8ff;
+}
+.hour{
+    left: 0px;
+}
+.minute{
+    left: 200px;
+}
+.second{
+    left: 400px;
+}
+
+/* clock text */
+.clock-text{
+    font-size: 130px;
+}
+
+/* botton */
+.button-style{
+    position: absolute;
+    width: 20px;
+    height: 75px;
+    right: 0px;
+    background-color: #e9f0e8;
+    border: 0px;
+}
+.button-up{
+    top: 0px;
+}
+.button-down{
+    bottom: 0px;
+}
+
+/**/
+.start{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    right: 10px;
+    bottom: 10px;
+}
+
+
+/* === FOOTER ========================================== */
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
 }
