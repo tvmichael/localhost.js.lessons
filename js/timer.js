@@ -23,7 +23,7 @@
         if (h >= 0) hourText.innerHTML = h;
     }
 
-    var step = 5;
+    var step = 1;
     var minuteText = document.getElementById('minute-text');
     var minuteUp = document.getElementById('minute-up');
     minuteUp.onclick = function () {
@@ -59,21 +59,45 @@
     var myVar;
     var countDownDate;
     function myTimer() {
-        var h = Number(hourText.innerHTML),
+        var mometTime = new Date(),
+            s = Number(secondText.innerHTML),
             m = Number(minuteText.innerHTML),
-            s = Number(secondText.innerHTML);
+            h = Number(hourText.innerHTML);
 
+        if (s > 0) {
+            s = s - 1;
+        }
+        else{
+            if (m > 0){
+                m = m - 1;
+                s = 59;
+            }
+            else {
+                if (h > 0){
+                    h = h - 1;
+                    s = 59;
+                    m = 59;
+                }
+                else {
+                    console.log('END!')
+                    clearInterval(myVar);
+                }
 
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
+            }
 
-        hourText.innerHTML = h;
-        minuteText.innerHTML = m;
+        }
         secondText.innerHTML = s;
-        console.log(countDownDate + '>> ' + h + ':' + m + ':' + s);
+        minuteText.innerHTML = m;
+        hourText.innerHTML = h;
+        //mometTime = parseInt(mometTime.getTime()/1000);
+        //console.log('mt=' + mometTime + '  cd=' + countDownDate + ' -- ' + Number(countDownDate - mometTime));
     }
     startTimer.onclick = function () {
-        countDownDate = new Date().getTime() + ;
+        var hx = Number(hourText.innerHTML) * 3600 +
+                 Number(minuteText.innerHTML) * 60 +
+                 Number(secondText.innerHTML);
+        countDownDate = new Date();
+        countDownDate = parseInt(countDownDate.getTime()/1000) + hx;
         if (startTimer.innerHTML == 'Start') {
             myVar = setInterval(myTimer, 1000);
             startTimer.innerHTML = 'Stop';
